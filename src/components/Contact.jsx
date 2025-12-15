@@ -67,7 +67,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Location</h4>
                     <p className="text-gray-400">
-                      Your City, Country
+                      Weliweriya, Sri Lanka
                     </p>
                   </div>
                 </div>
