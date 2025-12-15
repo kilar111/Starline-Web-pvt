@@ -21,22 +21,24 @@ const FloatingBackground = () => {
       {shapes.map((shape, index) => (
         <div
           key={index}
-          className={`absolute ${shape.size} opacity-10 hover:opacity-20 transition-opacity`}
+          className={`absolute ${shape.size} opacity-10 hover:opacity-20 transition-all duration-1000`}
           style={{
             left: shape.left,
             top: shape.top,
-            animation: `float ${shape.duration} ease-in-out infinite`,
+            animation: `float ${shape.duration} ease-in-out infinite, pulse 3s ease-in-out infinite`,
             animationDelay: shape.delay,
+            transform: 'translateZ(0)',
           }}
         >
           {shape.icon}
         </div>
       ))}
       
-      {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+      {/* Animated Gradient overlays */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-blob"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-blob animation-delay-6000"></div>
     </div>
   );
 };
